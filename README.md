@@ -1,13 +1,19 @@
-### Date created
+### This project was created on 9/24/2020
 Include the date you created this project and README file.
 
-### Project Title
+### Projet title is pdsnd_github
 Replace the Project Title
 
-### Description
-Describe what your project is about and what it does
+### This project is about posting my work in GitHub by using my local
+repository and my GitHub repository. 
+Tis project is one of requirments that needs to be combleted to obtain my nanodegree certificate.
 
-### Files used
+### My local repository contains 
+Bikeshare paython file.
+washington.cvs
+chicago.csv
+new_york_city.csv
+
 Include the files used
 
 ### Credits
