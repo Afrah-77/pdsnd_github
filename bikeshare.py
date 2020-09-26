@@ -1,4 +1,5 @@
-#import required python libraries
+#impor pandas library which offers data structures and operations for manipulating numirical tables.
+#import NumPy laibrary which used for working with arrys.
 import time
 import pandas as pd
 import numpy as np
@@ -31,7 +32,7 @@ def get_filters():
             print("Invalid input! Please try again.\n")
 
     # TO DO: get user input for month (all, january, february, ... , june)
-    while True:    
+    while True:
 
         month = input("\nPlease enter one of the following months:\n january, february, march, april, may, june OR enter all:\n ").lower()
 
@@ -73,7 +74,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     df = pd.read_csv(CITY_DATA[city])
 
 # convert the Start Time column to datetime
@@ -86,14 +87,14 @@ def load_data(city, month, day):
 # filter data by day
     if day != 'all':
        df = df[df['day_of_week'] == day.title()]
-   
+
 # filter data by month
     if month != 'all':
         month_name = ['january', 'february', 'march', 'april', 'may', 'june']
         month = month_name.index(month) + 1
-    
+
         df = df[df['month'] == month]
-     
+
     return df
 
 def time_stats(df):
@@ -107,21 +108,21 @@ def time_stats(df):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     common_month = df['month'].mode()[0]
-    
+
     print("Most Common Month To Travel Is:", common_month )
 
     # TO DO: display the most common day of week
     # first we need to extract day from Start Time (similar to practice 1)
     df['day_of_week'] = pd.to_datetime(df['Start Time'])
     common_day = df['day_of_week'].mode()[0]
-    
+
     print("Most Common Day To Travel Is:", common_day )
 
     # TO DO: display the most common start hour
     # first we need to extract hour from Start Time (similar to practice 1)
-    df['hour'] = df['Start Time'].dt.hour 
+    df['hour'] = df['Start Time'].dt.hour
     common_str_hour= df['hour'].mode()[0]
-    
+
     print("Most Common Start Hour Is: ", common_str_hour )
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -158,12 +159,12 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # TO DO: display total travel time
-    total_travel_time = df['Trip Duration'].sum()
-    print("The Total Travel Time Is:", total_travel_time)
+    df['Trip Duration'].sum()
+    print('The Total Travel Time Is {}'.format(df['Trip Duration'].sum()))
 
     # TO DO: display mean travel time
-    mean_travel_time = df['Trip Duration'].mean()
-    print("The Mean Travel Time Is:", mean_travel_time)
+    df['Trip Duration'].mean()
+    print('The Mean Travel Time Is {}'.format(df['Trip Duration'].mean()))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -187,25 +188,27 @@ def user_stats(df):
 
     except:
         print("\nIt seems that no gender Information available for the selected city.")
-   
+
 
     # TO DO: Display earliest, most recent, and most common year of birth
     #I apply try & except block to handle exception when the information is not availble for selected city
     try:
         earliest_DOB = int(df['Birth Year'].min())
         print("\nThe Earliest Year Of Birth Is:", earliest_DOB)
-    
+
         most_recent_DOB = int(df['Birth Year'].max())
         print("\nThe Most Recent Year Of Birth Is:", most_recent_DOB)
-    
+
         most_commn_DOB = int(df['Birth Year'].mode())
         print("\nThe Most Common Year Of Birth Is:", most_commn_DOB)
-    except:   
+    except:
         print("\nIt seems that no birth year information available for the selected city.")
-        
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
+#Below script prompts the user if they want to see 5 lines of raw data, display that data if the answer is 'yes',
+#and continue these prompts and displays until the user says 'no'
 def data_display(df):
     x=0
     answer=input("Would you like to see 5 lines of raw data, Please enter yes or no.\n").lower()
@@ -213,12 +216,12 @@ def data_display(df):
         if answer == 'yes':
            x=x+5
            print(df.head(x))
-        else: 
+        else:
            break
            continue
         answer=input("Would you like to see 5 lines of raw data, Please enter yes or no.\n").lower()
     return
-    
+
 
 def main():
     while True:
