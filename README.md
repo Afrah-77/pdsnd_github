@@ -1,21 +1,13 @@
-### This project was created on 9/24/2020
-Include the date you created this project and README file.
+### This project was created on 9/10/2020
 
-### Projet title is pdsnd_github
-Replace the Project Title
 
-### This project is about posting my work in GitHub by using my local
-repository and my GitHub repository. 
-Tis project is one of requirments that needs to be combleted to obtain my nanodegree certificate.
+### The Project title is Explore US Bikeshare Data
 
-### My local repository contains 
+
+### This project is about exploring and understanding  data related to bike share system using Python. bike share systems includes three major cities in the United States—Chicago, New York City, and Washington. in this project Many scripts were written that takes in raw input to create an interactive experience in the terminal to present these statistics.
+
+### My local repository contains  
 Bikeshare paython file.
 washington.cvs
 chicago.csv
 new_york_city.csv
-
-Include the files used
-
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
