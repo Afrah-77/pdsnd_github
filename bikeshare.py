@@ -1,4 +1,5 @@
-#import required python libraries
+#impor pandas library which offers data structures and operations for manipulating numirical tables.
+#import NumPy laibrary which used for working with arrys.
 import time
 import pandas as pd
 import numpy as np
@@ -207,7 +208,7 @@ def user_stats(df):
     print('-'*40)
 
 #Below script prompts the user if they want to see 5 lines of raw data, display that data if the answer is 'yes',
-#and continue these prompts and displays until the user says 'no'    
+#and continue these prompts and displays until the user says 'no'
 def data_display(df):
     x=0
     answer=input("Would you like to see 5 lines of raw data, Please enter yes or no.\n").lower()
